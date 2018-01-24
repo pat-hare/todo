@@ -1,8 +1,5 @@
 var bodyParser = require('body-parser');
-
 var mongoose = require('mongoose')
-
-//var data = [{item: 'Get Some Milk'}, {item: 'Walk Dog'}, {item: 'Kick Some Code Ass'}]
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 //Connect Database
@@ -14,8 +11,6 @@ var todoSchema = new mongoose.Schema({
 });
 
 var todoS = mongoose.model('todoS', todoSchema);
-
-
 
 module.exports = function(app) {
     app.get('*', function(req, res){

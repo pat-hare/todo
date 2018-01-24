@@ -4,6 +4,7 @@ $(document).ready(function(){
 
       var item = $('form input');
       var todo = {item: item.val()};
+      var value = $('form input').val();
 
       $.ajax({
         type: 'POST',
@@ -11,7 +12,7 @@ $(document).ready(function(){
         data: todo,
         success: function(data){
           //do something with the data via front-end framework
-          location.reload();
+          $('#todo-table ul').append('<li>' + value + '</li>')
         }
       });
 
@@ -20,13 +21,14 @@ $(document).ready(function(){
   });
 
   $('li').on('click', function(){
+      var selectedLi = $(this);
       var item = $(this).text().replace(/ /g, "-");
       $.ajax({
         type: 'DELETE',
         url: '/todo/' + item,
         success: function(data){
           //do something with the data via front-end framework
-          location.reload();
+          $(selectedLi).remove();
         }
       });
   });
