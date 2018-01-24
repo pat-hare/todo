@@ -12,7 +12,7 @@ $(document).ready(function(){
         data: todo,
         success: function(data){
           //do something with the data via front-end framework
-          $('#todo-table ul').append('<li>' + value + '</li>')
+          $('#todo-table ul').append('<li onclick="$(this).remove();">' + value + '</li>')
         }
       });
 
@@ -28,7 +28,7 @@ $(document).ready(function(){
         url: '/todo/' + item,
         success: function(data){
           //do something with the data via front-end framework
-          $('#todo-table ul').append('<li onclick="$(this).remove();">' + value + '</li>')
+          $(selectedLi).remove();
         }
       });
   });
