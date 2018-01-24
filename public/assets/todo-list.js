@@ -28,7 +28,7 @@ $(document).ready(function(){
         url: '/todo/' + item,
         success: function(data){
           //do something with the data via front-end framework
-          $(selectedLi).remove();
+          $('#todo-table ul').append('<li onclick="$(this).remove();">' + value + '</li>')
         }
       });
   });
