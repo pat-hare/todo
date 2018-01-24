@@ -13,6 +13,7 @@ $(document).ready(function(){
         success: function(data){
           //do something with the data via front-end framework
           $('#todo-table ul').append('<li onclick="$(this).remove();">' + value + '</li>')
+          item.val('')
         }
       });
 
