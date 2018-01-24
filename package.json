@@ -4,7 +4,7 @@
   "description": "Simple To-Do App",
   "main": "app.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "author": "wael",
   "license": "ISC",
