@@ -12,8 +12,8 @@ $(document).ready(function(){
         data: todo,
         success: function(data){
           //do something with the data via front-end framework
-          $('#todo-table ul').append('<li onclick="$(this).remove();">' + value + '</li>')
-          item.val('')
+          $('#todo-table ul').append('<li onclick="$(this).remove();">' + value + '</li>');
+          item.val('');
         }
       });
 

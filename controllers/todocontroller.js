@@ -13,14 +13,14 @@ var todoSchema = new mongoose.Schema({
 var todoS = mongoose.model('todoS', todoSchema);
 
 module.exports = function(app) {
-    app.get('*', function(req, res){
+    app.get('/todo', function(req, res){
         todoS.find({}, function(err, data){
             if (err) throw err;
             res.render('todo', {todos: data});
         })
     });
 
-    app.post('*', urlencodedParser, function(req, res){
+    app.post('/todo', urlencodedParser, function(req, res){
         var newTodo = todoS(req.body).save(function(err, data){
             if (err) throw err;
             res.json(data);
